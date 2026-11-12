@@ -31,7 +31,6 @@
     <!-- Header Navigation -->
     <header class="sticky top-0 z-50 bg-black/90 backdrop-blur-md border-b border-brand-border">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <!-- Logo with Custom Ohio + Basketball SVG -->
             <button onclick="navigateTo('about')" class="flex items-center space-x-3 group text-left cursor-pointer">
                 <div class="w-12 h-12 bg-brand-orange rounded-xl flex items-center justify-center p-2 text-black transition transform group-hover:scale-105 shadow-lg shadow-brand-orange/20">
                     <svg class="w-full h-full fill-current" viewBox="0 0 100 100">
@@ -46,7 +45,6 @@
                 </div>
             </button>
 
-            <!-- Navigation Links -->
             <nav class="hidden md:flex space-x-2">
                 <button id="nav-about" onclick="navigateTo('about')" class="px-5 py-2.5 rounded-lg text-sm font-bold uppercase tracking-wider transition border border-transparent text-brand-orange bg-brand-orange/10 border-brand-orange/30 cursor-pointer">
                     <i class="fa-solid fa-house-user mr-2"></i>About Party
@@ -58,29 +56,22 @@
         </div>
     </header>
 
-    <!-- MAIN CONTENT CONTAINERS -->
     <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
-
-        <!-- VIEW 1: ABOUT PAGE (DEFAULT) -->
+        <!-- VIEW 1: ABOUT PAGE -->
         <div id="view-about" class="space-y-12">
-            
-            <!-- Hero Banner -->
             <section class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-zinc-900 via-brand-black to-zinc-950 border border-brand-border p-8 md:p-12 shadow-2xl">
                 <div class="max-w-3xl space-y-6">
                     <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-brand-orange/10 border border-brand-orange/40 text-brand-orange text-sm font-bold">
                         <i class="fa-solid fa-fire text-brand-orange animate-pulse"></i>
                         <span>The official landing page for James Holodnak's Bachsketball Party</span>
                     </div>
-                    
                     <h1 class="text-4xl sm:text-6xl font-black uppercase tracking-tight text-white leading-tight">
                         The Final <span class="text-brand-orange underline underline-offset-8 decoration-brand-orange/40">March Madness</span> Tournament
                     </h1>
-                    
                     <p class="text-xl sm:text-2xl font-bold text-zinc-200 italic border-l-4 border-brand-orange pl-4 py-1">
                         "I'm inviting all my buddies over and we're going to play basketball."
                     </p>
-
-                    <div class="pt-4 flex flex-wrap gap-4">
+                    <div class="pt-4">
                         <button onclick="navigateTo('teams')" class="px-8 py-4 bg-brand-orange hover:bg-brand-darkOrange text-black font-black uppercase tracking-wider rounded-xl transition transform hover:-translate-y-1 shadow-lg shadow-brand-orange/30 flex items-center space-x-3 text-lg cursor-pointer">
                             <span>Explore 7 Teams & Rosters</span>
                             <i class="fa-solid fa-arrow-right"></i>
@@ -89,34 +80,30 @@
                 </div>
             </section>
 
-            <!-- Quick Details Cards Grid -->
             <section class="grid grid-cols-1 md:grid-cols-4 gap-6">
-                <div class="bg-brand-card border border-brand-border rounded-2xl p-6 space-y-2 relative overflow-hidden">
+                <div class="bg-brand-card border border-brand-border rounded-2xl p-6 space-y-2">
                     <div class="text-brand-orange text-3xl font-black"><i class="fa-solid fa-calendar-days"></i></div>
                     <div class="text-xs uppercase font-bold text-zinc-500 tracking-wider">When</div>
                     <div class="text-lg font-bold text-white">Saturday, March 20th</div>
-                    <div class="text-sm text-zinc-400">Gym opens 9:00 AM | Action starts 10:00 AM ET (All Day Event)</div>
+                    <div class="text-sm text-zinc-400">Gym opens 9:00 AM | Action starts 10:00 AM ET</div>
                 </div>
-
-                <div class="bg-brand-card border border-brand-border rounded-2xl p-6 space-y-2 relative overflow-hidden">
+                <div class="bg-brand-card border border-brand-border rounded-2xl p-6 space-y-2">
                     <div class="text-brand-orange text-3xl font-black"><i class="fa-solid fa-location-dot"></i></div>
                     <div class="text-xs uppercase font-bold text-zinc-500 tracking-wider">Where</div>
                     <div class="text-lg font-bold text-white">St. Albert the Great School Gym</div>
-                    <div class="text-sm text-zinc-400">North Royalton, Ohio (James's Hometown & Alma Mater)</div>
+                    <div class="text-sm text-zinc-400">North Royalton, Ohio</div>
                 </div>
-
-                <div class="bg-brand-card border border-brand-border rounded-2xl p-6 space-y-2 relative overflow-hidden">
+                <div class="bg-brand-card border border-brand-border rounded-2xl p-6 space-y-2">
                     <div class="text-brand-orange text-3xl font-black"><i class="fa-solid fa-user-group"></i></div>
                     <div class="text-xs uppercase font-bold text-zinc-500 tracking-wider">Who</div>
                     <div class="text-lg font-bold text-white">30 Ballers & Family Crew</div>
-                    <div class="text-sm text-zinc-400">Friends across all eras, plus family referees & score table crew</div>
+                    <div class="text-sm text-zinc-400">Friends across all eras + family staff</div>
                 </div>
-
-                <div class="bg-brand-card border border-brand-border rounded-2xl p-6 space-y-2 relative overflow-hidden">
+                <div class="bg-brand-card border border-brand-border rounded-2xl p-6 space-y-2">
                     <div class="text-brand-orange text-3xl font-black"><i class="fa-solid fa-trophy"></i></div>
                     <div class="text-xs uppercase font-bold text-zinc-500 tracking-wider">Layout</div>
                     <div class="text-lg font-bold text-white">Round Robin to Single Elim</div>
-                    <div class="text-sm text-zinc-400">7 Teams face off once for seeding, then bracket play to the title.</div>
+                    <div class="text-sm text-zinc-400">7 Teams battle for the crown.</div>
                 </div>
             </section>
 
@@ -158,79 +145,58 @@
                     "When I was a kid, my older brother Joe got invited to Brian Cugliari's March Madness tournament where he and his friends played in a driveway all day long. I thought it was the coolest thing and I wanted to do the same. So starting in sixth grade, my mom helped me make it happen. I invited my friends and my neighbors over to my house, ranked everyone by skill level, created teams that I thought were fair and made sure to mix personalities for best team chemistry results. Each team had to wear the color designated to them - often customized shirts were sported. We'd borrow a basketball hoop and wheel it down the street and up my driveway, chalk the court and had hotdogs, Becka chips and Gatorades. I did it from 6th grade to 12th and it was always one of my favorite days of the year. Playing basketball is one of my favorite things in the world and a bachelor party is usually an event where the bachelor gets to do whatever he wants - so I'm taking advantage of this opportunity to run back a childhood dream and do the March Madness tourny one last time with a little bigger of a budget and support. Appreciate you all!"
                 </p>
             </section>
-
         </div>
 
         <!-- VIEW 2: TEAMS DIRECTORY -->
         <div id="view-teams" class="hidden space-y-8">
-            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-brand-border pb-6">
-                <div>
-                    <h1 class="text-3xl font-black uppercase tracking-tight text-white">Tournament Teams & Rosters</h1>
-                    <p class="text-zinc-400">Select any team below to view their official roster and player profiles.</p>
-                </div>
+            <div class="border-b border-brand-border pb-6">
+                <h1 class="text-3xl font-black uppercase tracking-tight text-white">Tournament Teams & Rosters</h1>
+                <p class="text-zinc-400">Select any team below to view their official roster and player profiles.</p>
             </div>
-
-            <!-- Teams Grid (7 Teams) -->
-            <div id="teams-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Javascript populates cards here -->
-            </div>
+            <div id="teams-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
         </div>
 
-        <!-- VIEW 3: INDIVIDUAL TEAM ROSTER VIEW -->
+        <!-- VIEW 3: TEAM DETAIL -->
         <div id="view-team-detail" class="hidden space-y-8">
-            <!-- Back Button -->
             <button onclick="navigateTo('teams')" class="inline-flex items-center space-x-2 text-brand-orange hover:text-white font-bold uppercase text-sm bg-brand-card border border-brand-border px-4 py-2 rounded-xl transition cursor-pointer">
                 <i class="fa-solid fa-arrow-left"></i>
                 <span>Back to All Teams</span>
             </button>
-
-            <!-- Team Header Details -->
-            <div id="team-detail-header" class="bg-brand-card border border-brand-border rounded-3xl p-8 relative overflow-hidden">
-                <!-- Populated dynamically -->
-            </div>
-
-            <!-- Team Roster Table -->
+            <div id="team-detail-header" class="bg-brand-card border border-brand-border rounded-3xl p-8 relative overflow-hidden"></div>
             <div class="bg-brand-card border border-brand-border rounded-3xl overflow-hidden shadow-xl">
-                <div class="p-6 border-b border-brand-border flex items-center justify-between">
+                <div class="p-6 border-b border-brand-border">
                     <h3 class="text-xl font-black uppercase text-white flex items-center gap-2">
                         <i class="fa-solid fa-users text-brand-orange"></i> Squad Roster
                     </h3>
                 </div>
-
                 <div class="overflow-x-auto">
                     <table class="w-full text-left border-collapse">
                         <thead>
                             <tr class="bg-zinc-900/80 text-zinc-400 uppercase text-xs tracking-wider border-b border-brand-border">
-                                <th class="py-4 px-6 font-bold">#</th>
                                 <th class="py-4 px-6 font-bold">Player Name</th>
-                                <th class="py-4 px-6 font-bold">Fitness Level</th>
+                                <th class="py-4 px-6 font-bold">Conditioning</th>
                                 <th class="py-4 px-6 font-bold">Style of Play</th>
                                 <th class="py-4 px-6 font-bold text-right">Action</th>
                             </tr>
                         </thead>
-                        <tbody id="roster-table-body" class="divide-y divide-zinc-800 text-sm">
-                            <!-- Populated dynamically -->
-                        </tbody>
+                        <tbody id="roster-table-body" class="divide-y divide-zinc-800 text-sm"></tbody>
                     </table>
                 </div>
             </div>
         </div>
-
     </main>
 
     <!-- PLAYER PROFILE MODAL -->
     <div id="player-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-brand-card border border-brand-border w-full max-w-xl rounded-3xl overflow-hidden shadow-2xl relative animate-in fade-in zoom-in duration-200">
+        <div class="bg-brand-card border border-brand-border w-full max-w-xl rounded-3xl overflow-hidden shadow-2xl relative">
             <button onclick="closePlayerModal()" class="absolute top-4 right-4 bg-black/60 text-zinc-400 hover:text-white w-10 h-10 rounded-full flex items-center justify-center z-10 border border-zinc-700 cursor-pointer">
                 <i class="fa-solid fa-xmark text-lg"></i>
             </button>
-            <div id="player-modal-content" class="p-6 sm:p-8 space-y-6 max-h-[85vh] overflow-y-auto">
-                <!-- Dynamic Player Details -->
-            </div>
+            <div id="player-modal-content" class="p-6 sm:p-8 space-y-6 max-h-[85vh] overflow-y-auto"></div>
         </div>
     </div>
 
-    <!-- JAVASCRIPT LOGIC EMBEDDED SAFELY AT THE BOTTOM -->
+    <!-- JAVASCRIPT LOGIC -->
     <script>
         const teamsData = [
             {
@@ -240,10 +206,10 @@
                 badgeColor: "bg-blue-900 text-blue-200",
                 motto: "Locked in and ready for battle.",
                 players: [
-                    { id: "p1", name: "Jake Strippy", number: "01", height: "6'2\"", weight: "190 lbs", fitness: "Elite", style: "Floor General & Sharpshooter", bio: "Original neighborhood and high school crew member. High basketball IQ with a clutch jumper when the game is on the line." },
-                    { id: "p2", name: "Kyle Holdsworth", number: "05", height: "6'0\"", weight: "175 lbs", fitness: "High", style: "Lockdown Perimeter Defender", bio: "Relentless on-ball defender who will pick you up 94 feet and never tire out." },
-                    { id: "p3", name: "Sam D'Amico", number: "11", height: "6'3\"", weight: "200 lbs", fitness: "Solid", style: "Inside-Out Scorer", bio: "Physical presence in the paint who can also step out and knock down mid-range shots consistently." },
-                    { id: "p4", name: "Mike Turner Jr.", number: "23", height: "5'11\"", weight: "170 lbs", fitness: "High", style: "Fastbreak Slasher", bio: "Blazing fast first step, loves pushing the tempo and finishing in transition." }
+                    { id: "p1", name: "Jake Strippy", height: "6'6\"", weight: "250 lbs", fitness: "Minimal but it’s like riding a bike.. don’t have to worry about it", style: "Post moves are elite", bio: "Jake is relentless on the post and is known for setting a record at Ignatius for blocks in a season. Jake is also the better looking Strippy." },
+                    { id: "p2", name: "Kyle Holdsworth", height: "TBD", weight: "TBD", fitness: "TBD", style: "Player Profile Pending", bio: "Survey response pending." },
+                    { id: "p3", name: "Sam D'Amico", height: "5'7\"", weight: "185 lbs", fitness: "I’ll be dialed in. Sub 30 min 5ks with some sprint work for explosive stop and go movement", style: "Big defensive body. Ability to score will be light. You can rely on me for the occasional sky hook and some layups. I’ll shoot but the rim tends to be a big hurdle.", bio: "Fastest kid in the world in high school (-10.8 second 100, -22.04 second 200). Entered the 1,000 lb club in college (Max Bench - 295, Squat - 350, Deadlift - 425, Max Leg Press - 720). Fell off in my 30s but the base is still there. Just need to wake the beast." },
+                    { id: "p4", name: "Mike Turner Jr.", height: "6' 1 7/8\"", weight: "220 lbs", fitness: "TBD", style: "3 Point Line to 3 Point Line", bio: "Jumper stays wet. Celebrated teammate, hated rival. NBA comp: Ron Artest around 'Malice at the Palace' timeframe. Talks like KG, passes like White Chocolate. Would stab his own mother to win a coin flip; just like MJ." }
                 ]
             },
             {
@@ -253,10 +219,10 @@
                 badgeColor: "bg-pink-900 text-pink-200",
                 motto: "Flashy style, bucket getters.",
                 players: [
-                    { id: "p5", name: "Ryan Roumes", number: "03", height: "6'1\"", weight: "180 lbs", fitness: "High", style: "Scoring Guard", bio: "Natural scorer with a bag of floaters and pull-up jumpers." },
-                    { id: "p6", name: "Jru Shurtleff", number: "10", height: "6'0\"", weight: "175 lbs", fitness: "Elite", style: "Playmaker & Pest", bio: "Creates turnovers and finds open teammates with crafty pocket passes." },
-                    { id: "p7", name: "Hoss", number: "34", height: "6'4\"", weight: "220 lbs", fitness: "Bruiser", style: "Enforcer & Rebounder", bio: "Sets bone-crushing screens and cleans up the glass on both ends." },
-                    { id: "p8", name: "Eric Modie", number: "15", height: "6'2\"", weight: "185 lbs", fitness: "High", style: "Wing Stopper", bio: "Versatile defender capable of guarding 1 through 4." }
+                    { id: "p5", name: "Ryan Roumes", height: "6'1\"", weight: "210 lbs", fitness: "Good", style: "Baller. Can't score though. If someone on my team can score, its a wrap. Great team player. Phenomenal facilitator. Holly's gonna make me be the guy and we'll come in second if thats the case.", bio: "2011 Morris County championship runner up. (Woulda been the first MCT in school history) Lost by 3. Needed Odie to play better and woulda been a dub. Brought a narp right into mathiaos screen. Ruined his basketball career due to a bunion. Never lost to holz in my life in ball. Close, but nevs." },
+                    { id: "p6", name: "Jru Shurtleff", height: "6'1\"", weight: "182 lbs", fitness: "None", style: "Dennis Rodman", bio: "World Renowned Lock Down Defender." },
+                    { id: "p7", name: "Hoss", height: "6'0\"", weight: "170 lbs", fitness: "10/10", style: "Solid defense and passing. Haven't shot a basketball in years so probably a low shooting percentage", bio: "8th man on HS freshman basketball team." },
+                    { id: "p8", name: "Eric Modie", height: "6'4\"", weight: "265 lbs", fitness: "Ready to roll", style: "Grab boards and hustle", bio: "3x CYO champion. Averaged .2 mins per game for 2009 NRHS freshman basketball. Former Cleveland State basketball season ticket holder." }
                 ]
             },
             {
@@ -264,12 +230,12 @@
                 name: "Team Green",
                 color: "#10B981",
                 badgeColor: "bg-emerald-900 text-emerald-200",
-                motto: "Pure fundamentals and execution.",
+                motto: "Red Fox Soldier code: Strength & Honor",
                 players: [
-                    { id: "p9", name: "James Holodnak", number: "23", height: "6'1\"", weight: "190 lbs", fitness: "Peak", style: "Groom / Competitive Engine", bio: "The Groom and Commissioner. Running back the childhood driveway tournament one last time." },
-                    { id: "p10", name: "Michael Paen", number: "12", height: "6'2\"", weight: "195 lbs", fitness: "High", style: "Stretch Forward", bio: "Reliable shooter from deep with great court spacing." },
-                    { id: "p11", name: "Mike Duffy", number: "22", height: "5'10\"", weight: "165 lbs", fitness: "Solid", style: "Hustle Guard", bio: "First on the floor for every loose ball. Maximum effort every possession." },
-                    { id: "p12", name: "Ed Achziger", number: "40", height: "6'3\"", weight: "210 lbs", fitness: "Solid", style: "Post Anchor", bio: "Uses veteran positioning and footwork to score in the low post." }
+                    { id: "p9", name: "James Holodnak", height: "6'1\"", weight: "200 lbs", fitness: "Like a hungry dog", style: "Abusive.", bio: "I win in everything I do, always." },
+                    { id: "p10", name: "Michael Paen", height: "6'0\"", weight: "185 lbs", fitness: "10/10", style: "Hustle", bio: "St. Thomas Aquinas Freshman basketball most improved (2008)." },
+                    { id: "p11", name: "Mike Duffy", height: "5'10\"", weight: "170 lbs", fitness: "Marathon level", style: "Out Hustle everyone", bio: "From the Gardens of Jersey, with a total of basketball experience through the 5th grade, comes a soccer player with only the ability to layup and rebound. With a promise to outhustle everyone on the floor." },
+                    { id: "p12", name: "Ed Achziger", height: "6'0\"", weight: "200 lbs", fitness: "Solid but still something to be desired", style: "Facilitator who isn’t afraid to take a charge", bio: "Last seen celebrating end of season win to close out a 2-6 Season in the SF Marina D Level Rec League." }
                 ]
             },
             {
@@ -277,12 +243,12 @@
                 name: "Team Yellow",
                 color: "#F59E0B",
                 badgeColor: "bg-amber-900 text-amber-200",
-                motto: "High energy, high scoring.",
+                motto: "Shut up and dribble",
                 players: [
-                    { id: "p13", name: "Zach Adler", number: "07", height: "6'1\"", weight: "180 lbs", fitness: "High", style: "Dynamic Combo Guard", bio: "Capable of running the point or dropping 20 points off the bench." },
-                    { id: "p14", name: "Logan Pearce", number: "14", height: "6'3\"", weight: "190 lbs", fitness: "Elite", style: "Athletic Slashing Wing", bio: "Above-the-rim finisher in the open court." },
-                    { id: "p15", name: "Michael Costello", number: "21", height: "5'11\"", weight: "175 lbs", fitness: "High", style: "Sharp-Shooting Guard", bio: "Leaves opponents paying if they help off him on drives." },
-                    { id: "p16", name: "Connor Mathias", number: "33", height: "6'2\"", weight: "195 lbs", fitness: "Solid", style: "Physical Forward", bio: "Grinds out tough baskets inside and boxes out hard." }
+                    { id: "p13", name: "Zach Adler", height: "6'0\"", weight: "220 lbs", fitness: "Ideal", style: "Lebron James", bio: "Tournament competitor." },
+                    { id: "p14", name: "Logan Pearce", height: "5'11\"", weight: "210 lbs", fitness: "Poor", style: "PHYSICAL", bio: "I’ve got three kids man I don’t have time for this." },
+                    { id: "p15", name: "Michael Costello", height: "5'11\"", weight: "170 lbs", fitness: "Pretty good", style: "Cerebral", bio: "My story is well known." },
+                    { id: "p16", name: "Connor Mathias", height: "6'2\"", weight: "210 lbs", fitness: "Brutal", style: "Smash mouth", bio: "Similar to LeBron James career." }
                 ]
             },
             {
@@ -290,12 +256,12 @@
                 name: "Team Brown",
                 color: "#78350F",
                 badgeColor: "bg-amber-950 text-amber-300",
-                motto: "Grit, mud, and hard-nosed buckets.",
+                motto: "Men lie, women lie, buckets don't",
                 players: [
-                    { id: "p17", name: "Reggie Gross", number: "02", height: "6'0\"", weight: "185 lbs", fitness: "High", style: "Tenacious Guard", bio: "Never backs down from a challenge and commands the floor." },
-                    { id: "p18", name: "Nick D'Amico", number: "09", height: "6'2\"", weight: "190 lbs", fitness: "Solid", style: "Mid-Range Specialist", bio: "Lethal pull-up jumper from the elbow." },
-                    { id: "p19", name: "Owen Flanagan", number: "18", height: "6'3\"", weight: "205 lbs", fitness: "High", style: "Versatile Forward", bio: "Does a little bit of everything—rebounds, passes, and scores." },
-                    { id: "p20", name: "Noodle", number: "55", height: "6'4\"", weight: "215 lbs", fitness: "Solid", style: "Paint Protector", bio: "Controls the paint with timely shot-blocking and screens." }
+                    { id: "p17", name: "Reggie Gross", height: "6'2\"", weight: "170 lbs", fitness: "Never not conditioned", style: "Off ball shooter who does the dirty work", bio: "In 6th grade beat Strippy in the finals of the St. Ignatius basketball summer camp free throw tournament shooting 10/10 from the line. Rimmed out on a dunk while trying to posterize James in high school in the D'Amico driveway. That missed dunk has never left my mind and continues to fuel the fire within." },
+                    { id: "p18", name: "Nick D'Amico", height: "TBD", weight: "TBD", fitness: "TBD", style: "Player Profile Pending", bio: "Survey response pending." },
+                    { id: "p19", name: "Owen Flanagan", height: "6'3\"", weight: "200 lbs", fitness: "Could run a few miles at 8 minute pace", style: "Hit 1/5 3s, drive and brick lay up. Will make some good passes", bio: "CYO basketball grades 4-12, CYO football, TE, EDGE, grades 4-6, CYO soccer, half back grades 6-8, Freshman soccer, halfbacks, JV soccer, sophomore year, Best eyes - class of 2016." },
+                    { id: "p20", name: "Noodle", height: "6'4\"", weight: "220 lbs", fitness: "Peak/Optimal", style: "As if LeBron and Steph morphed into a Shane Gillis looking chap", bio: "This 24 year old powerhouse seeks to stuff the Holodnaks jump shots just like they stuffed him in closets for summers on end during his youth. A ferocious big man, he combines above-average height with below-average hip mobility. Once a varsity football player, collegiate track & field athlete, and 2-time Avon Middle School Spelling Bee Champion, Nick brings a rare combination of intellect and athleticism that is difficult to find in the Gardner family. The now Sherwin-Williams employee said of the upcoming competition: “The only thing those floors will be painted with are the tears of my opponents.”" }
                 ]
             },
             {
@@ -303,13 +269,13 @@
                 name: "Team Aqua",
                 color: "#06B6D4",
                 badgeColor: "bg-cyan-900 text-cyan-200",
-                motto: "Cool under pressure, splashing threes.",
+                motto: "Don't get hurt",
                 players: [
-                    { id: "p21", name: "Jake Miner", number: "04", height: "6'1\"", weight: "175 lbs", fitness: "High", style: "Pace & Space Guard", bio: "Controls game tempo and knocks down open perimeter shots." },
-                    { id: "p22", name: "Demetrius Williams", number: "13", height: "6'3\"", weight: "195 lbs", fitness: "Elite", style: "Explosive Athlete", bio: "High-flying athlete who brings instant momentum shifts." },
-                    { id: "p23", name: "Dragan Pantic", number: "24", height: "6'4\"", weight: "210 lbs", fitness: "Solid", style: "European Post Scorer", bio: "Finesse moves and soft touch around the rim." },
-                    { id: "p24", name: "Sam Schroder", number: "30", height: "6'0\"", weight: "180 lbs", fitness: "High", style: "Reliable Shooter", bio: "Catch-and-shoot threat from anywhere beyond the arc." },
-                    { id: "p25", name: "Joe", number: "35", height: "6'2\"", weight: "190 lbs", fitness: "Solid", style: "Hustle Forward", bio: "Gritty teammate who fills the stat sheet quietly." }
+                    { id: "p21", name: "Jake Miner", height: "6'0\"", weight: "185 lbs", fitness: "High", style: "Shifty", bio: "Used to have it, will rely on PEDs and biofreeze." },
+                    { id: "p22", name: "Demetrius Williams", height: "Barely 6'2\"", weight: "At LEAST 245 lbs", fitness: "Moderate at best", style: "Airballs and rebounds", bio: "Kinda good at sports growing up. Here for the vibes!" },
+                    { id: "p23", name: "Dragan Pantic", height: "TBD", weight: "TBD", fitness: "TBD", style: "Player Profile Pending", bio: "Survey response pending." },
+                    { id: "p24", name: "Sam Schroder", height: "5'10\"", weight: "165 lbs", fitness: "High", style: "I don’t play basketball", bio: "I don’t play basketball." },
+                    { id: "p25", name: "Joe", height: "5'11\"", weight: "167 lbs", fitness: "Beast mode", style: "Agile", bio: "Derrick Coleman." }
                 ]
             },
             {
@@ -317,13 +283,13 @@
                 name: "Team Black",
                 color: "#52525B",
                 badgeColor: "bg-zinc-800 text-zinc-200",
-                motto: "Shadow defense, championship focus.",
+                motto: "Hard in the paint",
                 players: [
-                    { id: "p26", name: "Zach Strippy", number: "00", height: "6'2\"", weight: "185 lbs", fitness: "Elite", style: "Clutch Closer", bio: "Takes and makes the big shots when the game is on the line." },
-                    { id: "p27", name: "Scotty Brooks", number: "08", height: "5'11\"", weight: "170 lbs", fitness: "High", style: "Pesty Defender", bio: "Makes life difficult for opposing point guards all game long." },
-                    { id: "p28", name: "Luke", number: "16", height: "6'3\"", weight: "200 lbs", fitness: "Solid", style: "Two-Way Wing", bio: "Solid defense paired with efficient scoring." },
-                    { id: "p29", name: "Brendan McKendry", number: "32", height: "6'4\"", weight: "215 lbs", fitness: "High", style: "Inside Bruiser", bio: "Dominant rebounder who finishes strongly through contact." },
-                    { id: "p30", name: "Joey Zeilmann", number: "50", height: "6'1\"", weight: "185 lbs", fitness: "Solid", style: "Team Catalyst", bio: "High energy teammate who sparks runs with hustle plays." }
+                    { id: "p26", name: "Zach Strippy", height: "6'3\"", weight: "230 lbs", fitness: "Elite Athlete", style: "Lebron James level of awareness of the game", bio: "HS stud, college intramural champ, All Ohio help-side defender." },
+                    { id: "p27", name: "Scotty Brooks", height: "6'5\"", weight: "215 lbs", fitness: "Non existent", style: "Hanging in there", bio: "Former athlete, father of 2." },
+                    { id: "p28", name: "Luke", height: "6'3\"", weight: "190 lbs", fitness: "The best", style: "Rebounds and layups", bio: "Played for one year in 5th grade, team won one game." },
+                    { id: "p29", name: "Brendan McKendry", height: "5'10\"", weight: "155 lbs", fitness: "High", style: "Quick & defend well", bio: "Graduate of the Bel Air Academy. Just a dude who loves to ball!" },
+                    { id: "p30", name: "Joey Zeilmann", height: "6'1\"", weight: "210 lbs", fitness: "Rough", style: "Sassy — Mix between Muggsy Bogues and Yao Ming", bio: "Position: Star Athlete. Best Attribute: ask your wife ;). Biggest Weakness: hairline. Nickname: Zeilbird. Born in 1992, Joe has attributed his successes in life to NOS energy before the 10th sip, Dog days of Summer with the Cougars Traveling Baseball Organization, spending summers running wind sprints on Donmar, and Working on agility trying to avoid being pinned down during a doorknob call in James’ basement." }
                 ]
             }
         ];
@@ -399,7 +365,6 @@
             if (tbody) {
                 tbody.innerHTML = team.players.map(p => `
                     <tr class="hover:bg-zinc-900/50 transition cursor-pointer" onclick="openPlayerModal('${team.id}', '${p.id}')">
-                        <td class="py-4 px-6 font-bold text-brand-orange">#${p.number}</td>
                         <td class="py-4 px-6 font-bold text-white flex items-center gap-3">
                             <div class="w-8 h-8 rounded-full bg-zinc-800 border border-zinc-700 flex items-center justify-center text-xs font-black text-brand-orange">
                                 ${p.name.charAt(0)}
@@ -428,7 +393,7 @@
                 modalContent.innerHTML = `
                     <div class="flex items-center space-x-4 border-b border-brand-border pb-4">
                         <div class="w-16 h-16 rounded-2xl bg-brand-orange flex items-center justify-center font-black text-black text-2xl shadow-lg">
-                            #${player.number}
+                            🏀
                         </div>
                         <div>
                             <h2 class="text-2xl font-black uppercase text-white">${player.name}</h2>
@@ -436,7 +401,7 @@
                         </div>
                     </div>
 
-                    <div class="grid grid-cols-3 gap-3 text-center text-sm">
+                    <div class="grid grid-cols-2 gap-3 text-center text-sm">
                         <div class="bg-zinc-900 p-3 rounded-xl border border-zinc-800">
                             <span class="text-[10px] text-zinc-500 uppercase font-bold block">Height</span>
                             <span class="font-bold text-white">${player.height}</span>
@@ -445,21 +410,17 @@
                             <span class="text-[10px] text-zinc-500 uppercase font-bold block">Weight</span>
                             <span class="font-bold text-white">${player.weight}</span>
                         </div>
-                        <div class="bg-zinc-900 p-3 rounded-xl border border-zinc-800">
-                            <span class="text-[10px] text-zinc-500 uppercase font-bold block">Fitness</span>
-                            <span class="font-bold text-brand-orange">${player.fitness}</span>
-                        </div>
                     </div>
 
                     <div class="space-y-2">
-                        <span class="text-xs text-zinc-500 uppercase font-bold block">Basketball Style of Play</span>
+                        <span class="text-xs text-zinc-500 uppercase font-bold block">Conditioning / Fitness Level</span>
                         <p class="text-sm font-semibold text-brand-orange bg-brand-orange/10 p-3 rounded-xl border border-brand-orange/30">
-                            <i class="fa-solid fa-basketball mr-2"></i>${player.style}
+                            <i class="fa-solid fa-fire mr-2"></i>${player.fitness}
                         </p>
                     </div>
 
                     <div class="space-y-2">
-                        <span class="text-xs text-zinc-500 uppercase font-bold block">Historical Athlete Bio & Scouting Report</span>
+                        <span class="text-xs text-zinc-500 uppercase font-bold block">Scouting Report & Historical Bio</span>
                         <p class="text-sm text-zinc-300 leading-relaxed bg-zinc-900/60 p-4 rounded-xl border border-zinc-800">
                             ${player.bio}
                         </p>
