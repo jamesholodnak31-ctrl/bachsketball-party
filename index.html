@@ -324,4 +324,138 @@
         }
 
         function renderTeamsGrid() {
-            const grid = document.getElementById('teams-
+            const grid = document.getElementById('teams-grid');
+            if (!grid) return;
+            grid.innerHTML = teamsData.map(team => `
+                <div onclick="navigateTo('team-detail', '${team.id}')" class="bg-brand-card border border-brand-border hover:border-brand-orange/60 rounded-2xl p-6 transition duration-200 hover:-translate-y-1 cursor-pointer flex flex-col justify-between group shadow-xl">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span class="w-4 h-4 rounded-full shadow-md" style="background-color: ${team.color}"></span>
+                            <span class="text-xs font-bold px-2.5 py-1 rounded-md uppercase tracking-wider ${team.badgeColor}">${team.name}</span>
+                        </div>
+                        <h3 class="text-2xl font-black uppercase text-white group-hover:text-brand-orange transition">${team.name}</h3>
+                        <p class="text-xs italic text-zinc-400 border-l-2 border-brand-orange/40 pl-2">"${team.motto}"</p>
+                    </div>
+                    <div class="pt-6 border-t border-zinc-800 flex items-center justify-between mt-6">
+                        <span class="text-xs font-bold text-zinc-400"><i class="fa-solid fa-users text-brand-orange mr-1"></i> ${team.players.length} Ballers</span>
+                        <span class="text-xs font-black uppercase text-brand-orange flex items-center gap-1 group-hover:translate-x-1 transition">View Roster <i class="fa-solid fa-chevron-right text-xs"></i></span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function renderTeamDetail(teamId) {
+            const team = teamsData.find(t => t.id === teamId);
+            if (!team) return;
+
+            const header = document.getElementById('team-detail-header');
+            if (header) {
+                header.style.borderColor = team.color;
+                header.innerHTML = `
+                    <div class="absolute top-0 right-0 w-32 h-32 opacity-10 rounded-full blur-2xl pointer-events-none" style="background-color: ${team.color}"></div>
+                    <div class="relative z-10 space-y-3">
+                        <div class="inline-block px-3 py-1 rounded-md text-xs font-bold uppercase tracking-wider text-white" style="background-color: ${team.color}">
+                            ${team.name} Roster
+                        </div>
+                        <h1 class="text-4xl font-black uppercase text-white">${team.name}</h1>
+                        <p class="text-zinc-300 italic">"${team.motto}"</p>
+                    </div>
+                `;
+            }
+
+            const backBtn = document.getElementById('back-to-teams-btn');
+            if (backBtn) {
+                backBtn.style.color = team.color;
+                backBtn.style.borderColor = team.color + '66';
+            }
+
+            const rosterHeading = document.getElementById('roster-title-heading');
+            if (rosterHeading) {
+                rosterHeading.style.color = team.color;
+            }
+
+            const tbody = document.getElementById('roster-table-body');
+            if (tbody) {
+                tbody.innerHTML = team.players.map(p => `
+                    <tr class="hover:bg-zinc-900/50 transition cursor-pointer" onclick="openPlayerModal('${team.id}', '${p.id}')">
+                        <td class="py-4 px-6 font-bold text-white flex items-center gap-3">
+                            <span class="px-2 py-0.5 rounded text-xs font-black bg-zinc-800 text-zinc-300 border border-zinc-700">#${p.number}</span>
+                            ${p.name}
+                        </td>
+                        <td class="py-4 px-6 text-zinc-300 font-medium"><span class="px-2.5 py-1 rounded bg-zinc-800 text-xs text-zinc-300">${p.fitness}</span></td>
+                        <td class="py-4 px-6 text-zinc-300">${p.style}</td>
+                        <td class="py-4 px-6 text-right">
+                            <button class="px-3 py-1.5 border hover:text-black text-xs font-bold uppercase rounded-lg transition cursor-pointer" style="color: ${team.color}; border-color: ${team.color}66; background-color: ${team.color}15;">
+                                View Profile
+                            </button>
+                        </td>
+                    </tr>
+                `).join('');
+            }
+        }
+
+        function openPlayerModal(teamId, playerId) {
+            const team = teamsData.find(t => t.id === teamId);
+            const player = team ? team.players.find(p => p.id === playerId) : null;
+            if (!player) return;
+
+            const modalContent = document.getElementById('player-modal-content');
+            if (modalContent) {
+                const photoHtml = player.photo && player.photo.startsWith('http') 
+                    ? `<img src="${player.photo}" alt="${player.name}" class="w-16 h-16 rounded-2xl object-cover border-2 shadow-lg" style="border-color: ${team.color};">`
+                    : `<div class="w-16 h-16 rounded-2xl flex items-center justify-center font-black text-black text-2xl shadow-lg" style="background-color: ${team.color}">🏀</div>`;
+
+                modalContent.innerHTML = `
+                    <div class="flex items-center space-x-4 border-b border-brand-border pb-4">
+                        ${photoHtml}
+                        <div>
+                            <div class="flex items-center gap-2">
+                                <span class="px-2 py-0.5 rounded text-xs font-black bg-zinc-800 text-zinc-300 border border-zinc-700">#${player.number}</span>
+                                <h2 class="text-2xl font-black uppercase text-white">${player.name}</h2>
+                            </div>
+                            <p class="text-xs font-bold uppercase tracking-wider mt-1" style="color: ${team.color}">${team.name} • ${player.style}</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-3 text-center text-sm">
+                        <div class="bg-zinc-900 p-3 rounded-xl border border-zinc-800">
+                            <span class="text-[10px] text-zinc-500 uppercase font-bold block">Height</span>
+                            <span class="font-bold text-white">${player.height}</span>
+                        </div>
+                        <div class="bg-zinc-900 p-3 rounded-xl border border-zinc-800">
+                            <span class="text-[10px] text-zinc-500 uppercase font-bold block">Weight</span>
+                            <span class="font-bold text-white">${player.weight}</span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2">
+                        <span class="text-xs text-zinc-500 uppercase font-bold block">Conditioning / Fitness Level</span>
+                        <p class="text-sm font-semibold p-3 rounded-xl border" style="color: ${team.color}; background-color: ${team.color}15; border-color: ${team.color}40;">
+                            <i class="fa-solid fa-fire mr-2"></i>${player.fitness}
+                        </p>
+                    </div>
+
+                    <div class="space-y-2">
+                        <span class="text-xs text-zinc-500 uppercase font-bold block">Scouting Report & Historical Bio</span>
+                        <p class="text-sm text-zinc-300 leading-relaxed bg-zinc-900/60 p-4 rounded-xl border border-zinc-800">
+                            ${player.bio}
+                        </p>
+                    </div>
+                `;
+            }
+
+            const modal = document.getElementById('player-modal');
+            if (modal) modal.classList.remove('hidden');
+        }
+
+        function closePlayerModal() {
+            const modal = document.getElementById('player-modal');
+            if (modal) modal.classList.add('hidden');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            navigateTo('about');
+        });
+    </script>
+</body>
+</html>
