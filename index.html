@@ -142,7 +142,7 @@
                 </div>
                 
                 <p class="text-zinc-300 text-lg leading-relaxed italic border-l-4 border-brand-orange pl-6 py-2 bg-black/30 rounded-r-xl">
-                    "When I was a kid, my older brother Joe got invited to Brian Cugliari's March Madness tournament where he and his friends played in a driveway all day long. I thought it was the coolest thing and I wanted to do the same. So starting in sixth grade, my mom helped me make it happen. I invited my friends and my neighbors over to my house, ranked everyone by skill level, created teams that I thought were fair and made sure to mix personalities for best team chemistry results. Each team had to wear the color designated to them - often customized shirts were sported. We'd borrow a basketball hoop and wheel it down the street and up my driveway, chalk the court and had hotdogs, Becka chips and Gatorades. I did it from 6th grade to 12th and it was always one of the favorite days of the year. Playing basketball is one of my favorite things in the world and a bachelor party is usually an event where the bachelor gets to do whatever he wants - so I'm taking advantage of this opportunity to run back a childhood dream and do the March Madness tourny one last time with a little bigger of a budget and support. Appreciate you all!"
+                    "When I was a kid, my older brother Joe got invited to Brian Cugliari's March Madness tournament where he and his friends played in a driveway all day long. I thought it was the coolest thing and I wanted to do the same. So starting in sixth grade, my mom helped me make it happen. I invited my friends and my neighbors over to my house, ranked everyone by skill level, created teams that I thought were fair and made sure to mix personalities for best team chemistry results. Each team had to wear the color designated to them - often customized shirts were sported. We'd borrow a basketball hoop and wheel it down the street and up my driveway, chalk the court and had hotdogs, Becka chips and Gatorades. I did it from 6th grade to 12th and it was always one of my favorite days of the year. Playing basketball is one of my favorite things in the world and a bachelor party is usually an event where the bachelor gets to do whatever he wants - so I'm taking advantage of this opportunity to run back a childhood dream and do the March Madness tourny one last time with a little bigger of a budget and support. Appreciate you all!"
                 </p>
             </section>
         </div>
@@ -378,4 +378,90 @@
             if (tbody) {
                 tbody.innerHTML = team.players.map(p => `
                     <tr class="hover:bg-zinc-900/50 transition cursor-pointer" onclick="openPlayerModal('${team.id}', '${p.id}')">
-                        <td class="py-4 px-
+                        <td class="py-4 px-6 font-bold text-white flex items-center gap-3">
+                            <span class="px-2 py-0.5 rounded text-xs font-black bg-zinc-800 text-zinc-300 border border-zinc-700">#${p.number}</span>
+                            ${p.name}
+                        </td>
+                        <td class="py-4 px-6 text-zinc-300 font-medium"><span class="px-2.5 py-1 rounded bg-zinc-800 text-xs text-zinc-300">${p.fitness}</span></td>
+                        <td class="py-4 px-6 text-zinc-300">${p.style}</td>
+                        <td class="py-4 px-6 text-right">
+                            <button class="px-3 py-1.5 border hover:text-black text-xs font-bold uppercase rounded-lg transition cursor-pointer" style="color: ${team.color}; border-color: ${team.color}66; background-color: ${team.color}15;">
+                                View Profile
+                            </button>
+                        </td>
+                    </tr>
+                `).join('');
+            }
+        }
+
+        function openPlayerModal(teamId, playerId) {
+            const team = teamsData.find(t => t.id === teamId);
+            const player = team ? team.players.find(p => p.id === playerId) : null;
+            if (!player) return;
+
+            const modalContent = document.getElementById('player-modal-content');
+            if (modalContent) {
+                const photoHtml = player.photo && player.photo.startsWith('http') 
+                    ? `<img src="${player.photo}" alt="${player.name}" class="w-full h-80 sm:h-96 object-cover object-top border-b-4 shadow-2xl" style="border-color: ${team.color};">`
+                    : `<div class="w-full h-64 flex items-center justify-center font-black text-white text-7xl shadow-2xl bg-zinc-900">🏀</div>`;
+
+                modalContent.innerHTML = `
+                    <div class="-m-6 sm:-m-8 mb-4 overflow-hidden bg-zinc-950 relative">
+                        ${photoHtml}
+                        <div class="absolute bottom-4 left-4 bg-black/80 backdrop-blur-md px-3.5 py-1.5 rounded-xl border border-zinc-700 shadow-lg">
+                            <span class="text-xs font-black uppercase text-brand-orange">${team.name}</span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-center justify-between border-b border-brand-border pb-3">
+                            <div>
+                                <h2 class="text-3xl font-black uppercase text-white">${player.name}</h2>
+                                <p class="text-xs font-bold uppercase tracking-wider text-zinc-400 mt-1">${player.style}</p>
+                            </div>
+                            <span class="px-4 py-2 rounded-xl text-xl font-black bg-zinc-900 text-white border-2 border-zinc-700 shadow-lg">#${player.number}</span>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-3 text-center text-sm">
+                            <div class="bg-zinc-900 p-3 rounded-xl border border-zinc-800">
+                                <span class="text-[10px] text-zinc-500 uppercase font-bold block">Height</span>
+                                <span class="font-bold text-white text-base">${player.height}</span>
+                            </div>
+                            <div class="bg-zinc-900 p-3 rounded-xl border border-zinc-800">
+                                <span class="text-[10px] text-zinc-500 uppercase font-bold block">Weight</span>
+                                <span class="font-bold text-white text-base">${player.weight}</span>
+                            </div>
+                        </div>
+
+                        <div class="space-y-1">
+                            <span class="text-xs text-zinc-500 uppercase font-bold block">Conditioning / Fitness Level</span>
+                            <p class="text-sm font-semibold p-3 rounded-xl border" style="color: ${team.color}; background-color: ${team.color}15; border-color: ${team.color}40;">
+                                <i class="fa-solid fa-fire mr-2"></i>${player.fitness}
+                            </p>
+                        </div>
+
+                        <div class="space-y-1">
+                            <span class="text-xs text-zinc-500 uppercase font-bold block">Scouting Report & Historical Bio</span>
+                            <p class="text-sm text-zinc-300 leading-relaxed bg-zinc-900/60 p-4 rounded-xl border border-zinc-800">
+                                ${player.bio}
+                            </p>
+                        </div>
+                    </div>
+                `;
+            }
+
+            const modal = document.getElementById('player-modal');
+            if (modal) modal.classList.remove('hidden');
+        }
+
+        function closePlayerModal() {
+            const modal = document.getElementById('player-modal');
+            if (modal) modal.classList.add('hidden');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            navigateTo('about');
+        });
+    </script>
+</body>
+</html>
