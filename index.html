@@ -48,7 +48,7 @@
                     <i class="fa-solid fa-house-user mr-2"></i>About Party
                 </button>
                 <button id="nav-teams" onclick="navigateTo('teams')" class="px-5 py-2.5 rounded-lg text-sm font-bold uppercase tracking-wider transition border border-transparent text-zinc-400 hover:text-white hover:bg-zinc-800 cursor-pointer">
-                    <i class="fa-solid fa-users-rays mr-2"></i>Teams & Rosters + Ref Crew (8)
+                    <i class="fa-solid fa-users-rays mr-2"></i>Teams & Rosters (7)
                 </button>
             </nav>
         </div>
@@ -70,7 +70,7 @@
                     </p>
                     <div class="pt-4">
                         <button onclick="navigateTo('teams')" class="px-8 py-4 bg-brand-orange hover:bg-brand-darkOrange text-black font-black uppercase tracking-wider rounded-xl transition transform hover:-translate-y-1 shadow-lg shadow-brand-orange/30 flex items-center space-x-3 text-lg cursor-pointer">
-                            <span>Explore 7 Teams & Rosters + Ref Crew</span>
+                            <span>Explore 7 Teams & Rosters</span>
                             <i class="fa-solid fa-arrow-right"></i>
                         </button>
                     </div>
@@ -117,10 +117,10 @@
                     <div class="space-y-4">
                         <h3 class="text-lg font-bold text-white uppercase border-b border-zinc-800 pb-2">Family & Guest Staff</h3>
                         <ul class="space-y-2 text-sm">
-                            <li class="items-center gap-2 flex"><i class="fa-solid fa-shield-halved text-brand-orange"></i> <strong>Referees:</strong> James's Dad, Uncles, and Dad's close friends</li>
-                            <li class="items-center gap-2 flex"><i class="fa-solid fa-clipboard text-brand-orange"></i> <strong>Score Table Girls:</strong> James's Mom, Aunts, and Mom's friends</li>
-                            <li class="items-center gap-2 flex"><i class="fa-solid fa-bottle-water text-brand-orange"></i> <strong>Dedicated Water Girl:</strong> James's Niece</li>
-                            <li class="items-center gap-2 flex"><i class="fa-solid fa-star text-brand-orange"></i> <strong>Special Guest Appearances:</strong> TBA</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-shield-halved text-brand-orange"></i> <strong>Referees:</strong> James's Dad, Uncles, and Dad's close friends</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-clipboard text-brand-orange"></i> <strong>Score Table Girls:</strong> James's Mom, Aunts, and Mom's friends</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-bottle-water text-brand-orange"></i> <strong>Dedicated Water Girl:</strong> James's Niece</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-star text-brand-orange"></i> <strong>Special Guest Appearances:</strong> TBA</li>
                         </ul>
                     </div>
                 </div>
@@ -163,7 +163,7 @@
                 </div>
                 <div class="overflow-x-auto">
                     <table class="w-full text-left border-collapse">
-                        <thead>
+                        <thead id="roster-table-head">
                             <tr class="bg-zinc-900/80 text-zinc-400 uppercase text-xs tracking-wider border-b border-brand-border">
                                 <th class="py-4 px-6 font-bold">Player Name</th>
                                 <th class="py-4 px-6 font-bold">Conditioning</th>
@@ -287,18 +287,18 @@
                 name: "Referee Crew",
                 color: "#FFFFFF",
                 badgeColor: "bg-zinc-100 text-zinc-900",
-                motto: "Some take bribes, some call fouls, none want to hear it from you.",
+                motto: "",
                 players: [
-                    { id: "ref1", name: "John Holodnak", number: "", height: "5'11\"", weight: "Too much", fitness: "Defensive Stalwart", style: "", bio: "Saint Albert the Great CYO coaching legend - similar to the NJ Hurley coaching tree. Known as a defensive stalwart. Bribes: Cannot be bribed, far too much integrity; however, subs and chips go a long way in possibly not seeing everything", photo: "" },
-                    { id: "ref2", name: "Tim Malley", number: "", height: "Larger than life", weight: "Same as college, carry it differently", fitness: "Knee Replacement Survivor", style: "I'm never wrong. Used to referee a real sport, soccer", bio: "Just had both knees replaced. Still out run Hondo. Bribes: Peanut Butter cups and cold PBR", photo: "" },
-                    { id: "ref3", name: "Rick Stewart", number: "", height: "5'10\"", weight: "190lbs", fitness: "Slow", style: "Slow", bio: "Beats James's dad like a drum in golf and every other sport. Bribes: I can be had for Miller Lites", photo: "" },
-                    { id: "ref4", name: "Joe Virzi", number: "", height: "5'7\" on a good day", weight: "215lbs (big bones)", fitness: "In Your Face", style: "In your face", bio: "Sicilian descent, mean. Bribes: ALWAYS", photo: "" },
-                    { id: "ref5", name: "Alex Chomat", number: "", height: "6'5\"", weight: "208 at the moment", fitness: "Let Them Play", style: "Let them play, no abuse", bio: "Played ball all childhood and HS. Born in PR - basketball is big there. Bribes: Easy with a bottle of good cab!", photo: "" },
-                    { id: "ref6", name: "Mike Turner", number: "", height: "5'11\"", weight: "240", fitness: "Knee Replacement Veteran", style: "Not my first time in black and white pin stripes", bio: "Small town boy from Louisiana. All state in football, basketball and track. Played 2 seasons of college football, one baseball and then dropped out after second football season to play Minor League Baseball for a season. Left that because I was going to get drafted so I joined the Navy. Spent 10 years in active duty, met a woman (also in the Navy) in Spain and we eventually married and have 4 children who are now all grown up with kids of their own. I went back to college and became a Biomedical Engineer. Retired end of 2016. I stayed active in sports during my Navy time and after leaving service. I play a lot of golf and shoot my age or better regularly. I love basketball and played regularly until my mid-60s when I had both knees replaced. I have officiated basketball, soccer and baseball. Bribes: Sure, golf balls and/or cigars", photo: "" },
-                    { id: "ref7", name: "Carl Behrens", number: "", height: "5'11\"", weight: "180", fitness: "Loose and Blind", style: "Loose and blind", bio: "I'm James's uncle - that's all you need to know. Bribes: Take them all the time", photo: "" },
-                    { id: "ref8", name: "Joe Gardner", number: "", height: "6'3\"", weight: "200", fitness: "Aged Like Fine Wine", style: "Let them play, the court is where disagreements are settled", bio: "Aged like fine wine, raised on the streets of Parma, educated as only one could be - by Jesuits. Showed New York what's what and retired to God's waiting room. Bribes: Ain't happening, but I do prefer Smithwick's!", photo: "" },
-                    { id: "ref9", name: "Mike Gardner", number: "", height: "", weight: "", fitness: "TBD", style: "Player Profile Pending", bio: "Survey response pending.", photo: "" },
-                    { id: "ref10", name: "Matt Gardner", number: "", height: "", weight: "", fitness: "TBD", style: "Player Profile Pending", bio: "Survey response pending.", photo: "" }
+                    { id: "ref1", name: "John Holodnak", height: "5'11\"", weight: "Too much", refereeStyle: "", bio: "Saint Albert the Great CYO coaching legend - similar to the NJ Hurley coaching tree. Known as a defensive stalwart", bribes: "Cannot be bribed, far too much integrity; however, subs and chips go a long way in possibly not seeing everything", photo: "" },
+                    { id: "ref2", name: "Tim Malley", height: "Larger than life", weight: "Same as college, carry it differently", refereeStyle: "I'm never wrong. Used to referee a real sport, soccer", bio: "Just had both knees replaced. Still out run Hondo", bribes: "Peanut Butter cups and cold PBR", photo: "" },
+                    { id: "ref3", name: "Rick Stewart", height: "5'10\"", weight: "190lbs", refereeStyle: "Slow", bio: "beats James's dad like a drum in golf and every other sport", bribes: "I can be had for Miller Lites", photo: "" },
+                    { id: "ref4", name: "Joe Virzi", height: "5'7\" on a good day", weight: "215lbs (big bones)", refereeStyle: "In your face", bio: "Sicilian descent, mean", bribes: "ALWAYS", photo: "" },
+                    { id: "ref5", name: "Alex Chomat", height: "6'5\"", weight: "208 at the moment", refereeStyle: "Let them play, no abuse", bio: "Played ball all childhood and HS. Born in PR - basketball is big there", bribes: "Easy with a bottle of good cab!", photo: "" },
+                    { id: "ref6", name: "Mike Turner", height: "5'11\"", weight: "240", refereeStyle: "Not my first time in black and white pin stripes", bio: "Small town boy from Louisiana. All state in football, basketball and track. Played 2 seasons of college football, one baseball and then dropped out after second football season to play Minor League Baseball for a season. Left that because I was going to get drafted so I joined the Navy. Spent 10 years in active duty, met a woman (also in the Navy) in Spain and we eventually married and have 4 children who are now all grown up with kids of their own. I went back to college and became a Biomedical Engineer. Retired end of 2016. I stayed active in sports during my Navy time and after leaving service. I play a lot of golf and shoot my age or better regularly. I love basketball and played regularly until my mid-60s when I had both knees replaced. I have officiated basketball, soccer and baseball.", bribes: "Sure, golf balls and/or cigars", photo: "" },
+                    { id: "ref7", name: "Carl Behrens", height: "5'11\"", weight: "180", refereeStyle: "Loose and blind", bio: "I'm James's uncle - that's all you need to know", bribes: "Take them all the time", photo: "" },
+                    { id: "ref8", name: "Joe Gardner", height: "6'3\"", weight: "200", refereeStyle: "Let them play, the court is where disagreements are settled", bio: "Aged like fine wine, raised on the streets of Parma, educated as only one could be - by Jesuits. Showed New York what's what and retired to God's waiting room", bribes: "Ain't happening, but I do prefer Smithwick's!", photo: "" },
+                    { id: "ref9", name: "Mike Gardner", height: "", weight: "", refereeStyle: "", bio: "", bribes: "", photo: "" },
+                    { id: "ref10", name: "Matt Gardner", height: "", weight: "", refereeStyle: "", bio: "", bribes: "", photo: "" }
                 ]
             }
         ];
@@ -372,23 +372,65 @@
             if (rosterHeading) {
                 rosterHeading.style.color = team.color === '#FFFFFF' ? '#F4F4F5' : team.color;
             }
+
+            const tableHead = document.getElementById('roster-table-head');
             const tbody = document.getElementById('roster-table-body');
-            if (tbody) {
-                tbody.innerHTML = team.players.map(p => `
-                    <tr class="hover:bg-zinc-900/50 transition cursor-pointer" onclick="openPlayerModal('${team.id}','${p.id}')">
-                        <td class="py-4 px-6 font-bold text-white flex items-center gap-3">
-                            ${p.number ? `<span class="px-2 py-0.5 rounded text-xs font-black bg-zinc-800 text-zinc-300 border border-zinc-700">#${p.number}</span>` : ''}
-                            ${p.name}
-                        </td>
-                        <td class="py-4 px-6 text-zinc-300 font-medium"><span class="px-2.5 py-1 rounded bg-zinc-800 text-xs text-zinc-300">${p.fitness}</span></td>
-                        <td class="py-4 px-6 text-zinc-300">${p.style}</td>
-                        <td class="py-4 px-6 text-right">
-                            <button class="px-3 py-1.5 border hover:text-black text-xs font-bold uppercase rounded-lg transition cursor-pointer" style="color: ${team.color === '#FFFFFF' ? '#F4F4F5' : team.color}; border-color: ${team.color === '#FFFFFF' ? '#F4F4F5' : team.color}66; background-color: ${team.color === '#FFFFFF' ? '#FFFFFF' : team.color}15;">
-                                View Profile
-                            </button>
-                        </td>
-                    </tr>
-                `).join('');
+
+            if (teamId === 'referee') {
+                if (tableHead) {
+                    tableHead.innerHTML = `
+                        <tr class="bg-zinc-900/80 text-zinc-400 uppercase text-xs tracking-wider border-b border-brand-border">
+                            <th class="py-4 px-6 font-bold">Referee Name</th>
+                            <th class="py-4 px-6 font-bold">Referee Style</th>
+                            <th class="py-4 px-6 font-bold">Bribes</th>
+                            <th class="py-4 px-6 font-bold text-right">Action</th>
+                        </tr>
+                    `;
+                }
+                if (tbody) {
+                    tbody.innerHTML = team.players.map(p => `
+                        <tr class="hover:bg-zinc-900/50 transition cursor-pointer" onclick="openPlayerModal('${team.id}','${p.id}')">
+                            <td class="py-4 px-6 font-bold text-white flex items-center gap-3">
+                                ${p.name}
+                            </td>
+                            <td class="py-4 px-6 text-zinc-300">${p.refereeStyle || 'N/A'}</td>
+                            <td class="py-4 px-6 text-zinc-300">${p.bribes || 'N/A'}</td>
+                            <td class="py-4 px-6 text-right">
+                                <button class="px-3 py-1.5 border hover:text-black text-xs font-bold uppercase rounded-lg transition cursor-pointer" style="color: #F4F4F5; border-color: #F4F4F566; background-color: #FFFFFF15;">
+                                    View Profile
+                                </button>
+                            </td>
+                        </tr>
+                    `).join('');
+                }
+            } else {
+                if (tableHead) {
+                    tableHead.innerHTML = `
+                        <tr class="bg-zinc-900/80 text-zinc-400 uppercase text-xs tracking-wider border-b border-brand-border">
+                            <th class="py-4 px-6 font-bold">Player Name</th>
+                            <th class="py-4 px-6 font-bold">Conditioning</th>
+                            <th class="py-4 px-6 font-bold">Style of Play</th>
+                            <th class="py-4 px-6 font-bold text-right">Action</th>
+                        </tr>
+                    `;
+                }
+                if (tbody) {
+                    tbody.innerHTML = team.players.map(p => `
+                        <tr class="hover:bg-zinc-900/50 transition cursor-pointer" onclick="openPlayerModal('${team.id}','${p.id}')">
+                            <td class="py-4 px-6 font-bold text-white flex items-center gap-3">
+                                ${p.number ? `<span class="px-2 py-0.5 rounded text-xs font-black bg-zinc-800 text-zinc-300 border border-zinc-700">#${p.number}</span>` : ''}
+                                ${p.name}
+                            </td>
+                            <td class="py-4 px-6 text-zinc-300 font-medium"><span class="px-2.5 py-1 rounded bg-zinc-800 text-xs text-zinc-300">${p.fitness}</span></td>
+                            <td class="py-4 px-6 text-zinc-300">${p.style}</td>
+                            <td class="py-4 px-6 text-right">
+                                <button class="px-3 py-1.5 border hover:text-black text-xs font-bold uppercase rounded-lg transition cursor-pointer" style="color: ${team.color}; border-color: ${team.color}66; background-color: ${team.color}15;">
+                                    View Profile
+                                </button>
+                            </td>
+                        </tr>
+                    `).join('');
+                }
             }
         }
         function openPlayerModal(teamId, playerId) {
@@ -397,48 +439,89 @@
             if (!player) return;
             const modalContent = document.getElementById('player-modal-content');
             if (modalContent) {
-                const photoHtml = player.photo && player.photo.startsWith('http') 
-                    ? `<img src="${player.photo}" alt="${player.name}" class="w-full h-80 sm:h-96 object-cover object-top border-b-4 shadow-2xl" style="border-color: ${team.color};">`
-                    : `<div class="w-full h-64 flex items-center justify-center font-black text-white text-7xl shadow-2xl bg-zinc-900">🏀</div>`;
-                modalContent.innerHTML = `
-                    <div class="-m-6 sm:-m-8 mb-4 overflow-hidden bg-zinc-950 relative">
-                        ${photoHtml}
-                        <div class="absolute bottom-4 left-4 bg-black/80 backdrop-blur-md px-3.5 py-1.5 rounded-xl border border-zinc-700 shadow-lg">
-                            <span class="text-xs font-black uppercase text-brand-orange">${team.name}</span>
-                        </div>
-                    </div>
-                    <div class="space-y-4 pt-2">
-                        <div class="flex items-center justify-between border-b border-brand-border pb-3">
-                            <div>
-                                <h2 class="text-3xl font-black uppercase text-white">${player.name}</h2>
-                                <p class="text-xs font-bold uppercase tracking-wider text-zinc-400 mt-1">${player.style}</p>
+                if (teamId === 'referee') {
+                    modalContent.innerHTML = `
+                        <div class="space-y-4 pt-2">
+                            <div class="flex items-center justify-between border-b border-brand-border pb-3">
+                                <div>
+                                    <h2 class="text-3xl font-black uppercase text-white">${player.name}</h2>
+                                    <p class="text-xs font-bold uppercase tracking-wider text-zinc-400 mt-1">Referee Crew</p>
+                                </div>
                             </div>
-                            ${player.number ? `<span class="px-4 py-2 rounded-xl text-xl font-black bg-zinc-900 text-white border-2 border-zinc-700 shadow-lg">#${player.number}</span>` : ''}
-                        </div>
-                        <div class="grid grid-cols-2 gap-3 text-center text-sm">
-                            <div class="bg-zinc-900 p-3 rounded-xl border border-zinc-800">
-                                <span class="text-[10px] text-zinc-500 uppercase font-bold block">Height</span>
-                                <span class="font-bold text-white text-base">${player.height || 'N/A'}</span>
+                            <div class="grid grid-cols-2 gap-3 text-center text-sm">
+                                <div class="bg-zinc-900 p-3 rounded-xl border border-zinc-800">
+                                    <span class="text-[10px] text-zinc-500 uppercase font-bold block">Height</span>
+                                    <span class="font-bold text-white text-base">${player.height || 'N/A'}</span>
+                                </div>
+                                <div class="bg-zinc-900 p-3 rounded-xl border border-zinc-800">
+                                    <span class="text-[10px] text-zinc-500 uppercase font-bold block">Weight</span>
+                                    <span class="font-bold text-white text-base">${player.weight || 'N/A'}</span>
+                                </div>
                             </div>
-                            <div class="bg-zinc-900 p-3 rounded-xl border border-zinc-800">
-                                <span class="text-[10px] text-zinc-500 uppercase font-bold block">Weight</span>
-                                <span class="font-bold text-white text-base">${player.weight || 'N/A'}</span>
+                            <div class="space-y-1">
+                                <span class="text-xs text-zinc-500 uppercase font-bold block">Referee Style</span>
+                                <p class="text-sm font-semibold p-3 rounded-xl border border-zinc-800 bg-zinc-900 text-zinc-200">
+                                    ${player.refereeStyle || 'N/A'}
+                                </p>
+                            </div>
+                            <div class="space-y-1">
+                                <span class="text-xs text-zinc-500 uppercase font-bold block">Bio</span>
+                                <p class="text-sm text-zinc-300 leading-relaxed bg-zinc-900/60 p-4 rounded-xl border border-zinc-800 whitespace-pre-line">
+                                    ${player.bio || 'N/A'}
+                                </p>
+                            </div>
+                            <div class="space-y-1">
+                                <span class="text-xs text-zinc-500 uppercase font-bold block">Bribes</span>
+                                <p class="text-sm font-semibold p-3 rounded-xl border border-zinc-800 bg-zinc-900 text-brand-orange">
+                                    ${player.bribes || 'N/A'}
+                                </p>
                             </div>
                         </div>
-                        <div class="space-y-1">
-                            <span class="text-xs text-zinc-500 uppercase font-bold block">Conditioning / Fitness Level</span>
-                            <p class="text-sm font-semibold p-3 rounded-xl border" style="color: ${team.color === '#FFFFFF' ? '#F4F4F5' : team.color}; background-color: ${team.color === '#FFFFFF' ? '#FFFFFF' : team.color}15; border-color: ${team.color === '#FFFFFF' ? '#FFFFFF' : team.color}40;">
-                                <i class="fa-solid fa-fire mr-2"></i>${player.fitness}
-                            </p>
+                    `;
+                } else {
+                    const photoHtml = player.photo && player.photo.startsWith('http') 
+                        ? `<img src="${player.photo}" alt="${player.name}" class="w-full h-80 sm:h-96 object-cover object-top border-b-4 shadow-2xl" style="border-color: ${team.color};">`
+                        : `<div class="w-full h-64 flex items-center justify-center font-black text-white text-7xl shadow-2xl bg-zinc-900">🏀</div>`;
+                    modalContent.innerHTML = `
+                        <div class="-m-6 sm:-m-8 mb-4 overflow-hidden bg-zinc-950 relative">
+                            ${photoHtml}
+                            <div class="absolute bottom-4 left-4 bg-black/80 backdrop-blur-md px-3.5 py-1.5 rounded-xl border border-zinc-700 shadow-lg">
+                                <span class="text-xs font-black uppercase text-brand-orange">${team.name}</span>
+                            </div>
                         </div>
-                        <div class="space-y-1">
-                            <span class="text-xs text-zinc-500 uppercase font-bold block">Scouting Report & Historical Bio</span>
-                            <p class="text-sm text-zinc-300 leading-relaxed bg-zinc-900/60 p-4 rounded-xl border border-zinc-800">
-                                ${player.bio}
-                            </p>
+                        <div class="space-y-4 pt-2">
+                            <div class="flex items-center justify-between border-b border-brand-border pb-3">
+                                <div>
+                                    <h2 class="text-3xl font-black uppercase text-white">${player.name}</h2>
+                                    <p class="text-xs font-bold uppercase tracking-wider text-zinc-400 mt-1">${player.style}</p>
+                                </div>
+                                ${player.number ? `<span class="px-4 py-2 rounded-xl text-xl font-black bg-zinc-900 text-white border-2 border-zinc-700 shadow-lg">#${player.number}</span>` : ''}
+                            </div>
+                            <div class="grid grid-cols-2 gap-3 text-center text-sm">
+                                <div class="bg-zinc-900 p-3 rounded-xl border border-zinc-800">
+                                    <span class="text-[10px] text-zinc-500 uppercase font-bold block">Height</span>
+                                    <span class="font-bold text-white text-base">${player.height || 'N/A'}</span>
+                                </div>
+                                <div class="bg-zinc-900 p-3 rounded-xl border border-zinc-800">
+                                    <span class="text-[10px] text-zinc-500 uppercase font-bold block">Weight</span>
+                                    <span class="font-bold text-white text-base">${player.weight || 'N/A'}</span>
+                                </div>
+                            </div>
+                            <div class="space-y-1">
+                                <span class="text-xs text-zinc-500 uppercase font-bold block">Conditioning / Fitness Level</span>
+                                <p class="text-sm font-semibold p-3 rounded-xl border" style="color: ${team.color}; background-color: ${team.color}15; border-color: ${team.color}40;">
+                                    <i class="fa-solid fa-fire mr-2"></i>${player.fitness}
+                                </p>
+                            </div>
+                            <div class="space-y-1">
+                                <span class="text-xs text-zinc-500 uppercase font-bold block">Scouting Report & Historical Bio</span>
+                                <p class="text-sm text-zinc-300 leading-relaxed bg-zinc-900/60 p-4 rounded-xl border border-zinc-800 whitespace-pre-line">
+                                    ${player.bio || 'No bio available.'}
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                `;
+                    `;
+                }
             }
             const modal = document.getElementById('player-modal');
             if (modal) modal.classList.remove('hidden');
